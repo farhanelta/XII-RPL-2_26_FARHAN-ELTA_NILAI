@@ -1,0 +1,16 @@
+const express = require('express')
+const router = express.Router()
+
+const gradecontroller = require('../controllers/users')
+
+router.get('/grades', gradecontroller.index)
+
+router.get('/grade/:id', gradecontroller.show)
+
+router.post('/grade', gradecontroller.store)
+
+router.put('/grade/:id', gradecontroller.update)
+
+router.delete('/grade/:id', gradecontroller.delete)
+
+module.exports = router
