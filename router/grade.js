@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const gradecontroller = require('../controllers/users')
+const gradecontroller = require('../controllers/grade')
 
 router.get('/grades', gradecontroller.index)
 

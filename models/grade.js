@@ -7,16 +7,16 @@ const GradeSchema = new mongoose.Schema({
         unique: true
     },
     mapel: {
-        type: Int32Array
+        type: String,
     },
     nilai_uh: {
-        type: Int32Array
+        type: String,
     },
     nilai_praktek: {
-        type: Int32Array
+        type: String,
     },
     nilai_teori: {
-        type: Int32Array
+        type: String,
     },
 })
 
