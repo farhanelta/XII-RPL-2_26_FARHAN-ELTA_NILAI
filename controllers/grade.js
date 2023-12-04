@@ -7,14 +7,14 @@ module.exports = {
         if(grades.length > 0){
           res.status(200).json({
             status: true,
-            data: users,
+            data: grades,
             method: req.method,
             url: req.url,
           })
         }else{
             res.json({
                 status: false,
-                message: "Data siswa masih kosong"
+                message: "Nilai siswa masih kosong"
             })
         }
       } catch(error){
@@ -23,13 +23,13 @@ module.exports = {
     },
     show: async (req, res) => {
       try {
-        const grades = await Grade.findById(req.params.id)
+        const grades = await Grade.findOne({ "nis": req.params['nis'] })
         res.json({
           status: true,
-          data: user,
+          data: grades,
           method: req.method,
           url: req.url,
-          message: "Data siswa telah didapatkan"
+          message: "Nilai siswa telah didapatkan"
         })
 
       } catch (error) {
@@ -41,10 +41,10 @@ module.exports = {
         const grades = await Grade.create(req.body)
         res.status(200).json({
           status: true,
-          data: user,
+          data: grades,
           method: req.method,
           url: req.url,
-          message: "Data siswa berhasil ditambahkan"
+          message: "Nilai siswa berhasil ditambahkan"
         })
 
       }catch(error){
@@ -59,10 +59,10 @@ module.exports = {
         })
         res.json({
           status: true,
-          data: user,
+          data: grades,
           method: req.method,
           url: req.url,
-          message: "Data siswa berhasil diubah"
+          message: "Nilai siswa berhasil diubah"
         })
 
       } catch (error) {
@@ -74,10 +74,10 @@ module.exports = {
           const grades = await Grade.findByIdAndDelete(req.params.id)
           res.json({
             status: true,
-            data: user,
+            data: grades,
             method: req.method,
             url: req.url,
-            message: "Data siswa telah berhasil dihapus"
+            message: "Nilai siswa telah berhasil dihapus"
           })
         } catch (error) {
           res.status(400).json({success: false})

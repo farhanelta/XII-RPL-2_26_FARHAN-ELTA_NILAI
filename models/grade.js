@@ -4,7 +4,6 @@ const GradeSchema = new mongoose.Schema({
     nis: {
         type: String,
         required: [true, 'Silahkan isikan nis siswa'],
-        unique: true
     },
     mapel: {
         type: String,
