@@ -23,7 +23,7 @@ module.exports = {
     },
     show: async (req, res) => {
       try {
-        const grades = await Grade.findOne({ "nis": req.params['nis'] })
+        const grades = await Grade.findById(req.params.id)
         res.json({
           status: true,
           data: grades,

@@ -5,7 +5,7 @@ const gradecontroller = require('../controllers/grade')
 
 router.get('/grades', gradecontroller.index)
 
-router.get('/grade/:nis', gradecontroller.show)
+router.get('/grade/:id', gradecontroller.show)
 
 router.post('/grade', gradecontroller.store)
 
